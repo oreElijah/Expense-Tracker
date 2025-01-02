@@ -3,4 +3,4 @@
 /.venv
 .vscode
 /images
-.env
+.env.sample
