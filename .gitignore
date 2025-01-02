@@ -1,4 +1,6 @@
 /__pycache__
 /etc
-/env
+/.venv
 .vscode
+/images
+.env
