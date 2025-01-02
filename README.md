@@ -22,7 +22,7 @@ A user-friendly web application built with Flask to manage daily expenses effici
 
 ## Installation
 1. Clone this repository:
-   git clone https://github.com/your-username/expense-tracker.git
+   git clone https://github.com/oreElaijah/Expense-Tracker
 2. Navigate to the project directory:
     cd expense-tracker
 3. Create and activate a virtual environment:
