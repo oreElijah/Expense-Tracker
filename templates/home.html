@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+{%block title%} Home {%endblock%}
+
+{%block content%}
+</div>
+<h1>Welcome, {{ current_user.name }}</h1>
+<form action="/home" method="post">
+<h3 align="center">Expense Tracker</h3>
+    <div class="form-group">
+<input type="text" id="task" placeholder="Enter the category" name="category" class="form-control" >
+<input type="text" id="task" placeholder="Enter the amount" name="amount" class="form-control" >
+<input type="date" id="task" placeholder="Enter your date" name="date" class="form-control" >
+<div align="center">
+<button type="submit" class="btn btn-primary">Add Expense</button>
+<button class="btn btn-primary"><a href="{{url_for('view_expense')}}" class="a">View Expenses</a></button>
+</div>
+{% if task_list %}
+<table class="table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>Expense Details</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for expense in task_list %}
+        <tr>
+            <td>
+                <strong>Category:</strong> {{ expense.Category }}<br>
+                <strong>Amount:</strong> {{ expense.Amount }}<br>
+                <strong>Date:</strong> {{ expense.Date }}
+            </td>
+            <td>
+                <form action="{{ url_for('delete_task', expense_id=expense.id) }}" method="post" style="display:inline;">
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+<h2 class="text-center mt-5">Expense Charts</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h4 class="text-center">Bar Chart</h4>
+        {% if bar_chart %}
+        <img src="data:image/png;base64,{{ bar_chart }}" class="img-fluid" alt="Bar Chart">
+        {% else %}
+        <p>No data available for Bar Chart.</p>
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+        <h4 class="text-center">Pie Chart</h4>
+        {% if pie_chart %}
+        <img src="data:image/png;base64,{{ pie_chart }}" class="img-fluid" alt="Pie Chart">
+        {% else %}
+        <p>No data available for Pie Chart.</p>
+        {% endif %}
+    </div>
+</div>
+</div>
+{%endblock%}

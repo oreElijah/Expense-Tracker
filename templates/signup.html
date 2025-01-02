@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block title%} Signup {%endblock%}
+
+{%block content%}
+<form action="/signup" method="post">
+<h3 align="center">Signup</h3>
+    <div class="form-group">
+    <input type="text" name="name" id="name" placeholder="Enter Username" class="form-control" >
+    <input type="text" name="email" id="email" placeholder="Enter  Email" class="form-control" >
+    <input type="text" name="password" id="password" placeholder="Enter password" class="form-control" >
+    <div align="center">
+    <input type="submit" value="Submit"class="btn btn-primary">
+</div>
+</div>
+</form>
+{%endblock%}

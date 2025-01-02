@@ -1,0 +1,14 @@
+body{
+    background-attachment: fixed;
+
+}
+
+.a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.a:hover{
+    color: white;
+    text-decoration: none;
+}
